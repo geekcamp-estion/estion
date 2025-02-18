@@ -150,6 +150,19 @@
             alert("コピーに失敗しました: " + err);
         });
     }
+    
+    function closeIndustryModal() {
+    const modal = document.getElementById('industry-modal-container');
+    modal.classList.add('opacity-0');
+    
+    // 300ms後に `hidden` を追加して完全に非表示
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 300);
+
+    // 現在の業界IDをリセット
+    currentIndustryId = null;
+}
 
     // hover時の表示表示内容
     function updateIndustryModal(industryId) {
